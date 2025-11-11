@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Merger Tool</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>PDF Merger</h1>
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      </header>
+
+      <section class="uploader">
+        <input id="fileInput" type="file" accept="application/pdf" multiple hidden />
+        <button id="browseBtn" class="btn primary">Upload PDFs</button>
+
+        <div id="dropZone" class="dropzone" tabindex="0" aria-label="Drop PDFs here">
+          <p>Drag & drop PDF files here, or click "Upload PDFs"</p>
+        </div>
+      </section>
+
+      <section>
+        <ul id="fileList" class="file-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="actions">
+        <button id="clearBtn" class="btn" disabled>Remove Selected</button>
+        <button id="mergeBtn" class="btn success" disabled>Merge PDFs</button>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Status - PDF Merger Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .status-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #28a745;
+        }
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .status-item:last-child {
+            border-bottom: none;
+        }
+        .status-label {
+            font-weight: 600;
+            color: #555;
+        }
+        .status-value {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .status-value.error {
+            color: #dc3545;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+        .btn:hover {
+            background: #5568d3;
+        }
+        .btn-success {
+            background: #28a745;
+        }
+        .btn-success:hover {
+            background: #218838;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .info-box h3 {
+            color: #2196F3;
+            margin-bottom: 10px;
+        }
+        .command {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 5px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐋 Docker Status</h1>
+        <p class="subtitle">PDF Merger Tool - Container Management</p>
+        
+        <div class="status-card">
+            <div class="status-item">
+                <span class="status-label">Docker Daemon</span>
+                <span class="status-value">✅ Running</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Container Status</span>
+                <span class="status-value">✅ Running (Healthy)</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Container Name</span>
+                <span class="status-value">pdf-merger-app</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Port</span>
+                <span class="status-value">3000</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Application URL</span>
+                <span class="status-value">
+                    <a href="http://localhost:3000" class="btn btn-success" target="_blank">Open PDF Merger Tool</a>
+                </span>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📋 Quick Commands</h3>
+            <p><strong>View containers:</strong></p>
+            <div class="command">docker ps</div>
+            
+            <p><strong>View logs:</strong></p>
+            <div class="command">docker-compose logs</div>
+            
+            <p><strong>Stop containers:</strong></p>
+            <div class="command">docker-compose down</div>
+            
+            <p><strong>Start containers:</strong></p>
+            <div class="command">docker-compose up -d</div>
+        </div>
+
+        <div class="info-box">
+            <h3>🔧 Docker Desktop GUI Not Opening?</h3>
+            <p><strong>Try these steps:</strong></p>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Check system tray (bottom-right) for Docker icon 🐋</li>
+                <li>Right-click Docker icon → "Open Dashboard"</li>
+                <li>Press Windows Key → Type "Docker Desktop" → Enter</li>
+                <li>Use Alt+Tab to find minimized Docker window</li>
+            </ol>
+            <p style="margin-top: 15px;"><strong>Note:</strong> You don't need the GUI! Everything works via command line and browser.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="http://localhost:3000" class="btn btn-success" target="_blank">🚀 Open PDF Merger Tool</a>
+            <a href="QUICK_FIX_DOCKER_GUI.md" class="btn" target="_blank">📖 View Troubleshooting Guide</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

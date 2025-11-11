@@ -1,0 +1,46 @@
+═══════════════════════════════════════════════════════
+      IF POWERSHELL IS "STUCK" - HERE'S THE FIX
+═══════════════════════════════════════════════════════
+
+PROBLEM: PowerShell is stuck, not responding
+───────────────────────────────────────────────────────
+
+SOLUTION: Press Ctrl + C
+───────────────────────────────────────────────────────
+1. Look at your PowerShell window
+2. Press: Ctrl + C (hold Ctrl, press C)
+3. This will stop whatever command is running
+4. You'll get your cursor back
+
+WHY THIS HAPPENS:
+───────────────────────────────────────────────────────
+The command "docker-compose logs -f" shows live logs
+It keeps running and updating, so it looks "stuck"
+But it's actually working - just showing you live information
+
+HOW TO USE COMMANDS:
+───────────────────────────────────────────────────────
+
+✅ SAFE COMMANDS (these finish quickly):
+   docker ps
+   docker-compose down
+   docker-compose up -d
+
+⚠️ COMMANDS THAT KEEP RUNNING (will look "stuck"):
+   docker-compose logs -f
+   (This shows live logs - press Ctrl+C to stop it)
+
+✅ TO SEE LOGS WITHOUT GETTING STUCK:
+   docker-compose logs --tail=20
+   (This shows last 20 lines and exits)
+
+═══════════════════════════════════════════════════════
+
+QUICK FIX RIGHT NOW:
+───────────────────────────────────────────────────────
+1. Press: Ctrl + C
+2. Wait 2 seconds
+3. You should see your cursor again
+4. Type: docker ps (to check if app is running)
+
+═══════════════════════════════════════════════════════

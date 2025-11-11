@@ -1,0 +1,61 @@
+═══════════════════════════════════════════════════════
+     STEP-BY-STEP: HOW TO RUN YOUR APP IN DOCKER
+═══════════════════════════════════════════════════════
+
+STEP 1: MAKE SURE DOCKER DESKTOP IS RUNNING
+───────────────────────────────────────────────────────
+☐ Look at bottom-right corner of your screen
+☐ Find the Docker icon (whale picture 🐳)
+☐ Click on it
+
+   IF IT SAYS "Docker Desktop is running":
+   ✅ GOOD! Go to STEP 2
+
+   IF IT'S NOT RUNNING:
+   → Click "Start Docker Desktop" or "Quit" then start it again
+   → Wait 2-3 minutes
+   → Check again
+
+STEP 2: OPEN POWERSHELL (COMMAND WINDOW)
+───────────────────────────────────────────────────────
+☐ Press Windows key + R
+☐ Type: powershell
+☐ Press Enter
+☐ A black window will open
+
+STEP 3: GO TO YOUR PROJECT FOLDER
+───────────────────────────────────────────────────────
+☐ In the black window, type this EXACTLY:
+   cd "C:\Users\athua\OneDrive\Desktop\New fr"
+☐ Press Enter
+☐ You should see the folder path in the window
+
+STEP 4: RUN DOCKER COMMAND
+───────────────────────────────────────────────────────
+☐ Type this EXACTLY:
+   docker-compose up -d
+☐ Press Enter
+☐ Wait 2-5 minutes (you'll see text scrolling)
+☐ When you see your cursor again, it's done!
+
+STEP 5: OPEN YOUR BROWSER
+───────────────────────────────────────────────────────
+☐ Open Chrome, Edge, or any browser
+☐ Type in address bar: localhost:3000
+☐ Press Enter
+☐ YOUR APP WILL APPEAR! 🎉
+
+═══════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+───────────────────────────────────────────────────────
+Problem: "Cannot connect to Docker daemon"
+Solution: Go back to STEP 1, restart Docker Desktop
+
+Problem: "Port 3000 already in use"
+Solution: Close other programs using port 3000
+
+Problem: Build fails
+Solution: Make sure you're in the right folder (STEP 3)
+
+═══════════════════════════════════════════════════════

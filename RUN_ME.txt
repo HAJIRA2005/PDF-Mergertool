@@ -1,0 +1,47 @@
+═══════════════════════════════════════════════════════
+        SUPER SIMPLE - JUST DO THIS:
+═══════════════════════════════════════════════════════
+
+METHOD 1: EASIEST WAY (DO THIS!)
+───────────────────────────────────────────────────────
+1. Start Docker Desktop
+   → Press Windows button
+   → Type "Docker Desktop"
+   → Click on it
+   → Wait 2-3 minutes
+
+2. Double-click this file: docker-start.bat
+   (Right-click it if it doesn't work, select "Run as administrator")
+
+3. Wait for it to finish
+
+4. Open browser, go to: localhost:3000
+
+DONE! ✅
+
+───────────────────────────────────────────────────────
+
+METHOD 2: IF METHOD 1 DOESN'T WORK
+───────────────────────────────────────────────────────
+1. Start Docker Desktop (same as above)
+
+2. Press Windows + X
+   → Click "Windows PowerShell"
+
+3. Copy and paste this:
+   cd "C:\Users\athua\OneDrive\Desktop\New fr"
+
+4. Press Enter
+
+5. Copy and paste this:
+   docker-compose up -d
+
+6. Press Enter
+
+7. Wait 2-5 minutes
+
+8. Open browser, go to: localhost:3000
+
+DONE! ✅
+
+═══════════════════════════════════════════════════════

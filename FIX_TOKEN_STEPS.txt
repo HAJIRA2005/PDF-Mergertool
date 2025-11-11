@@ -1,0 +1,29 @@
+========================================
+QUICK FIX - Get New Token with Workflow Permission
+========================================
+
+STEP 1: Create New Token
+------------------------
+1. Go to: https://github.com/settings/tokens
+2. Click "Generate new token"
+3. Click "Generate new token (classic)"
+4. Name it: "PDF Merger Tool"
+5. Check BOTH boxes:
+   ✅ repo (all repo permissions)
+   ✅ workflow (THIS IS IMPORTANT!)
+6. Click "Generate token"
+7. COPY THE NEW TOKEN (starts with ghp_)
+
+
+STEP 2: Push Again
+------------------------
+After you get the new token, come back here and paste it.
+I'll push your code for you!
+
+
+WHY THIS HAPPENED:
+------------------------
+Your project has GitHub Actions workflow files (.github/workflows/)
+GitHub needs special permission to upload those files.
+That's why we need the "workflow" permission!
+

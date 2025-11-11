@@ -1,0 +1,57 @@
+========================================
+HOW TO PUSH TO GITHUB - SUPER SIMPLE!
+========================================
+
+STEP 1: Get a Token (Special Password)
+----------------------------------------
+1. Open your browser
+2. Go to: https://github.com/settings/tokens
+3. Click "Generate new token"
+4. Click "Generate new token (classic)"
+5. Name it: "PDF Merger Tool"
+6. Check the box that says "repo" (all repo permissions)
+7. Scroll down and click "Generate token"
+8. COPY THE LONG CODE IT SHOWS YOU (starts with ghp_)
+   ⚠️ IMPORTANT: Copy it NOW - you can only see it once!
+
+
+STEP 2: Push Your Code
+----------------------------------------
+1. Open PowerShell in your folder
+2. Run this command:
+   git push -u origin main
+
+3. When it asks for Username:
+   Type: HAJIRA2005
+   Press Enter
+
+4. When it asks for Password:
+   PASTE YOUR TOKEN (the code you copied in Step 1)
+   Press Enter
+
+5. Wait... it should work!
+
+
+STEP 3: Check It Worked
+----------------------------------------
+Go to: https://github.com/HAJIRA2005/pdf-merger-tool
+
+You should see all your files there! 🎉
+
+
+TROUBLESHOOTING
+----------------------------------------
+If it says "authentication failed":
+- Make sure you used the TOKEN, not your real password
+- Make sure you copied the ENTIRE token (it's very long!)
+- Try making a new token
+
+If it says "repository not found":
+- Make sure the repository exists at: https://github.com/HAJIRA2005/pdf-merger-tool
+- Check that you're logged into the right GitHub account
+
+
+NEED HELP?
+----------------------------------------
+See SIMPLE_GITHUB_STEPS.md for more detailed help!
+

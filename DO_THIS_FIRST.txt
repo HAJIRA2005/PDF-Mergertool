@@ -1,0 +1,67 @@
+═══════════════════════════════════════════════════════
+           DO THIS FIRST - FIX DOCKER
+═══════════════════════════════════════════════════════
+
+LOOK AT THE BOTTOM-RIGHT CORNER OF YOUR SCREEN
+───────────────────────────────────────────────────────
+Do you see a Docker icon? (looks like a whale 🐳)
+
+IF YOU SEE IT:
+──────────────
+1. Click on the Docker icon
+2. Does it say "Docker Desktop is running"?
+   - YES → Go to STEP 2 below
+   - NO → Do this:
+     a. Click "Quit Docker Desktop"
+     b. Wait 10 seconds
+     c. Click Windows button (bottom-left)
+     d. Type "Docker Desktop"
+     e. Click on it
+     f. Wait 2-3 minutes
+     g. Go to STEP 2
+
+IF YOU DON'T SEE IT:
+─────────────────────
+1. Click Windows button (bottom-left)
+2. Type "Docker Desktop"
+3. Click on it
+4. Wait 2-3 minutes for it to start
+5. Go to STEP 2
+
+STEP 2: TEST IF DOCKER WORKS
+───────────────────────────────────────────────────────
+1. Press Windows button + R
+2. Type: powershell
+3. Press Enter
+4. In the black window, type: docker ps
+5. Press Enter
+
+WHAT HAPPENS?
+─────────────
+✅ GOOD: You see a list (even if empty) or no error
+   → Docker is working! Go to STEP 3
+
+❌ BAD: You see an error message
+   → Go back to STEP 1 and restart Docker Desktop
+   → Or wait longer (sometimes takes 5 minutes)
+
+STEP 3: DEPLOY YOUR APP
+───────────────────────────────────────────────────────
+1. In the same black window, type this EXACTLY:
+   cd "C:\Users\athua\OneDrive\Desktop\New fr"
+   (Press Enter)
+
+2. Then type this EXACTLY:
+   docker-compose up -d
+   (Press Enter)
+
+3. WAIT 2-5 minutes (you'll see text scrolling)
+
+4. When it stops, open your browser
+
+5. Go to: localhost:3000
+
+6. YOUR APP IS RUNNING! 🎉
+
+═══════════════════════════════════════════════════════
+

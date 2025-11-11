@@ -1,0 +1,66 @@
+═══════════════════════════════════════════════════════
+  HOW TO RUN YOUR APP IN DOCKER - SUPER SIMPLE GUIDE
+═══════════════════════════════════════════════════════
+
+STEP 1: TURN ON DOCKER
+───────────────────────────────────────────────────────
+1. Look at the bottom-right corner of your screen
+2. Find the Docker icon (looks like a whale)
+3. If you see it, click on it
+4. If it says "Docker Desktop is running" → GOOD! Go to STEP 2
+5. If you DON'T see it or it says it's stopped:
+   - Click the Windows button (bottom-left)
+   - Type "Docker Desktop"
+   - Click on "Docker Desktop"
+   - Wait 2 minutes (be patient!)
+   - Go back to STEP 1 and check again
+
+STEP 2: OPEN COMMAND WINDOW
+───────────────────────────────────────────────────────
+1. Press the Windows button + R
+2. Type: powershell
+3. Press Enter
+4. A black window will open
+
+STEP 3: GO TO YOUR PROJECT FOLDER
+───────────────────────────────────────────────────────
+In that black window, type this EXACTLY:
+   cd "C:\Users\athua\OneDrive\Desktop\New fr"
+Then press Enter
+
+STEP 4: RUN DOCKER
+───────────────────────────────────────────────────────
+In the same black window, type this EXACTLY:
+   docker-compose up -d
+Then press Enter
+
+STEP 5: WAIT
+───────────────────────────────────────────────────────
+- You will see a lot of text scrolling
+- Wait until it stops
+- It might take 2-5 minutes
+- When you see your cursor again (no more text), you're done!
+
+STEP 6: OPEN YOUR BROWSER
+───────────────────────────────────────────────────────
+1. Open Google Chrome (or any browser)
+2. Type in the address bar: localhost:3000
+3. Press Enter
+4. YOUR APP SHOULD APPEAR! 🎉
+
+═══════════════════════════════════════════════════════
+  THAT'S IT! YOU'RE DONE!
+═══════════════════════════════════════════════════════
+
+TO STOP THE APP LATER:
+───────────────────────────────────────────────────────
+In the same black window, type:
+   docker-compose down
+Then press Enter
+
+IF SOMETHING GOES WRONG:
+───────────────────────────────────────────────────────
+- Make sure Docker Desktop is running (STEP 1)
+- Try closing and opening Docker Desktop again
+- Wait longer (sometimes it takes time)
+

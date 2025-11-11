@@ -1,0 +1,56 @@
+═══════════════════════════════════════════════════════
+   RENAME FOLDER: "New fr" → "PDF Merger Tool"
+═══════════════════════════════════════════════════════
+
+✅ CONTAINERS STOPPED - Ready to rename!
+───────────────────────────────────────────────────────
+
+STEP-BY-STEP INSTRUCTIONS:
+───────────────────────────────────────────────────────
+
+STEP 1: CLOSE PROGRAMS
+───────────────────────────────────────────────────────
+☐ Close Cursor (or VS Code) if the folder is open
+☐ Close this PowerShell window
+☐ Close any File Explorer windows showing this folder
+
+STEP 2: RENAME THE FOLDER
+───────────────────────────────────────────────────────
+☐ Open File Explorer
+☐ Go to: C:\Users\athua\OneDrive\Desktop
+☐ Find the folder: "New fr"
+☐ Right-click on "New fr"
+☐ Click "Rename"
+☐ Type: PDF Merger Tool
+☐ Press Enter
+
+STEP 3: REOPEN YOUR PROJECT
+───────────────────────────────────────────────────────
+☐ Open Cursor (or VS Code)
+☐ Open the folder: "PDF Merger Tool"
+☐ Open PowerShell in the new folder
+
+STEP 4: REDEPLOY IN DOCKER
+───────────────────────────────────────────────────────
+In PowerShell, type:
+   docker-compose up -d
+
+Then open browser: localhost:3000
+
+═══════════════════════════════════════════════════════
+
+WHAT I'VE ALREADY DONE:
+───────────────────────────────────────────────────────
+✅ Stopped all Docker containers
+✅ Updated docker-compose.yml with project name
+✅ Everything is ready for renaming
+
+═══════════════════════════════════════════════════════
+
+IMPORTANT:
+───────────────────────────────────────────────────────
+- You MUST close Cursor/VS Code before renaming
+- The folder is currently being used, so you need to close it
+- After renaming, everything will work the same way!
+
+═══════════════════════════════════════════════════════

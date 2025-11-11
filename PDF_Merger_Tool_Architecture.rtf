@@ -1,0 +1,64 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Arial;}}
+\fs24
+\b PDF Merger Tool — System Architecture\b0\par
+\par
+\b Overview\b0\par
+A lightweight client–server web app to upload multiple PDFs and return a single merged PDF. Stateless backend; files processed in-memory; no database.\par
+- Client: public/index.html, public/app.js, public/style.css\par
+- Server: server.js (Node.js + Express + pdf-lib + multer)\par
+- Containerization: Dockerfile, docker-compose.yml\par
+- Repository: https://github.com/HAJIRA2005/pdf-merger-tool\par
+\par
+\b High-level Diagram\b0\par
+\fs20
++-------------------+           HTTP            +------------------------+\par
+|    Web Browser    |  -- GET / (static) -->   |        Express         |\par
+|  (User uploads)   |  <- HTML/CSS/JS  --      |  Static /public assets |\par
+|  - Files list     |                          |  POST /merge           |\par
+|  - Merge action   |  -- POST /merge ---->    |  Multer (memory)       |\par
++---------+---------+                          |  pdf-lib merge         |\par
+          |                                     |  Respond PDF bytes     |\par
+          |  <----------- PDF (download) -------+------------------------+\par
+\fs24\par
+\b Request Flow\b0\par
+1) Browser loads UI from public/ served by Express\par
+2) User selects/arranges PDFs; client builds FormData(files[])\par
+3) Client calls POST /merge (multipart/form-data)\par
+4) Multer parses files in memory; pdf-lib merges pages\par
+5) Server returns merged PDF (Content-Type: application/pdf)\par
+\par
+\b Key Endpoints\b0\par
+- GET / — serves static UI\par
+- GET /health — returns { status: 'ok' }\par
+- POST /merge — accepts files[] (multiple PDFs), returns merged PDF\par
+\par
+\b Core Merge Logic (excerpt)\b0\par
+\fs20
+app.post('/merge', upload.array('files'), async (req, res) => {\par
+  const files = req.files || [];\par
+  if (!files.length) return res.status(400).json({ error: 'No files uploaded' });\par
+  const mergedPdf = await PDFDocument.create();\par
+  for (const file of files) {\par
+    if (!file.mimetype?.includes('pdf')) return res.status(400).json({ error: 'Only PDF files are allowed' });\par
+    const incomingPdf = await PDFDocument.load(file.buffer);\par
+    const copied = await mergedPdf.copyPages(incomingPdf, incomingPdf.getPageIndices());\par
+    copied.forEach(p => mergedPdf.addPage(p));\par
+  }\par
+  const bytes = await mergedPdf.save();\par
+  res.setHeader('Content-Type', 'application/pdf');\par
+  res.setHeader('Content-Disposition', 'attachment; filename="merged.pdf"');\par
+  res.send(Buffer.from(bytes));\par
+});\par
+\fs24\par
+\b Deployment\b0\par
+- Local: npm install && npm start → http://localhost:3000\par
+- Docker: build image and run on port 3000\par
+- Docker Compose: docker-compose up -d (includes healthcheck)\par
+\par
+\b Non-Functional Notes\b0\par
+- Stateless; easy horizontal scaling\par
+- In-memory processing; no disk writes\par
+- Validate MIME type; set request size limits if public\par
+- /health for container health checks\par
+}\par
