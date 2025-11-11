@@ -1,0 +1,43 @@
+name: Docker Deploy
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: pdf-merger-tool:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Test Docker image
+        run: |
+          docker run -d -p 3000:3000 --name test-pdf-merger pdf-merger-tool:latest
+          sleep 5
+          curl -f http://localhost:3000/health || exit 1
+          docker stop test-pdf-merger
+          docker rm test-pdf-merger
+
+      - name: Docker image info
+        run: |
+          echo "✅ Docker image built successfully!"
+          echo "Image: pdf-merger-tool:latest"
+          echo "To run locally: docker run -d -p 3000:3000 pdf-merger-tool:latest"
+
+
+
